@@ -1,5 +1,4 @@
 import React from "react";
-import BackgroundImage from "../assets/navbg.png";
 import Logo from "../assets/Vector.png";
 import Monke from "../assets/Monke.png";
 import Monke1 from "../assets/Monke1.png";

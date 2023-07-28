@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import Monke from "../assets/Monke.png";
 import Tweet from "../assets/tweet.png";
-import Mask from "../assets/mask.png";
 import Discord from "../assets/discord.png";
 import FilterMonk from "../assets/filterMonk.png";
 import MonkeLogo from "../assets/monkLogo.png";
@@ -22,9 +21,7 @@ import leftBottom from "../assets/overlay/left-bottom.png";
 import middle from "../assets/overlay/middle.png";
 import rightBottom from "../assets/overlay/right-bottom.png";
 import NavBarTop from "../assets/overlay/top-left.png";
-import Mobiledevice from "../assets/Mobiledevice.png";
-import Mobiledevice1 from "../assets/Mobiledevice1.png";
-import Line from "../assets/line.png";
+
 import Image from "next/image";
 import Navbar from "../layout/Navbar";
 import Navleft from "../assets/overlay/navleft.png"
