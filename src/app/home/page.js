@@ -245,9 +245,8 @@ const Home = () => {
                 <Image
                   style={{
                     position: "absolute",
-                    
-                    left: "539px",
-                    bottom: "-38px",
+                    right:-30,
+                    bottom: -26,
                   }}
                   className=""
                   src={middle}
