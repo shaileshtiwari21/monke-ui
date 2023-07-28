@@ -21,6 +21,7 @@ import FooterBackgroundImage from "../assets/footerbg.png";
 import leftBottom from "../assets/overlay/left-bottom.png";
 import middle from "../assets/overlay/middle.png";
 import rightBottom from "../assets/overlay/right-bottom.png";
+import NavBarTop from "../assets/overlay/top-left.png";
 import Mobiledevice from "../assets/Mobiledevice.png";
 import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
@@ -174,6 +175,7 @@ const Home = () => {
     <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
       <Image className="absolute bottom-0" src={leftBottom} />
       <Image className="absolute bottom-0 right-0" src={rightBottom} />
+      <Image style={{position:"absolute",top:74}} className="hidden lg:block  h-20 w-20" src={NavBarTop} />
       <Navbar />
       {/* <Ex /> */}
       {/* Mobile Layout */}
