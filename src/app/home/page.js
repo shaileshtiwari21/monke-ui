@@ -27,8 +27,6 @@ import Mobiledevice from "../assets/Mobiledevice.png";
 import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
 import Image from "next/image";
-import Dashboard from "../assets/Dashboard.png";
-import Navbar from "../layout/Navbar";
 
 const Home = () => {
   const footerImages = [
@@ -172,6 +170,17 @@ const Home = () => {
             {/* Text */}
             <div>
               <div className=" p-4 bg-white relative h-full">
+                <Image
+                  style={{
+                    position: "absolute",
+                    
+                    left: "539px",
+                    bottom: "-38px",
+                  }}
+                  className=""
+                  src={middle}
+                />
+
                 <div className="">
                   <Image src={BgMonk} alt="" className="absolute bottom-0 " />
                 </div> */}
