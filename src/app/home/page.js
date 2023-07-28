@@ -1,7 +1,5 @@
-"use client";
+"use client"
 import { useState } from "react";
-
-// import Navbar from "../layouts/Navbar";
 
 import Monke from "../assets/Monke.png";
 import Tweet from "../assets/tweet.png";
@@ -27,9 +25,17 @@ import Mobiledevice from "../assets/Mobiledevice.png";
 import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
 import Image from "next/image";
+import Navbar from "../layout/Navbar";
 
 const Home = () => {
   const [selectedIndex, setselectedIndex] = useState(0);
+  const [isTaskCompleted, setIsTaskCompleted] = useState(false);
+  const handleCompleteTask = () => {
+    setIsTaskCompleted(true);
+  };
+  const handleALLTask = () => {
+    setIsTaskCompleted(false);
+  };
   const footerImages = [
     footerImage,
     footerImage1,
@@ -168,7 +174,7 @@ const Home = () => {
     <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
       <Image className="absolute bottom-0" src={leftBottom} />
       <Image className="absolute bottom-0 right-0" src={rightBottom} />
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Ex /> */}
       {/* Mobile Layout */}
 
@@ -276,38 +282,55 @@ const Home = () => {
                 </div>
                 <hr style={{ borderColor: "#F5F5F5" }} />
                 <div className="flex gap-4 p-3">
-                  <p className="font-semibold text-[#184623] cursor-pointer">
-                    All Task (5)
-                  </p>
-                  <p className="font-normal text-[#AAAAAA] cursor-pointer">
-                    Completed
-                  </p>
+                <p
+                      // className="font-semibold text-[#184623] cursor-pointer"
+                      className={`${
+                        isTaskCompleted
+                          ? "font-normal text-[#AAAAAA] cursor-pointer"
+                          : "font-semibold text-[#184623]"
+                      }`}
+                      onClick={handleALLTask}
+                    >
+                      All Task (5)
+                    </p>
+                  <p
+                      className={`${
+                        isTaskCompleted
+                          ? "font-semibold text-[#184623]"
+                          : "font-normal text-[#AAAAAA] cursor-pointer"
+                      }`}
+                      onClick={handleCompleteTask}
+                    >
+                      Completed
+                    </p>
                 </div>
                 <hr style={{ borderColor: "#F5F5F5" }} />
                 {/* inner content  */}
-                <div className="flex">
-                  <div className="flex-1 p-4">
-                    <p className="font-medium text-[#184623]">
-                      <Image
-                        src={Tweet}
-                        alt="logo"
-                        className="inline-block align-middle mr-1"
-                      />{" "}
-                      Twitter PFP
-                    </p>
-                    <p className="font-normal text-[#AAAAAA]">
-                      User is awarded for using NFT as Twitter
-                    </p>
-                  </div>
-                  <div className="p-4 font-bold text-[#184623] flex items-center">
-                    <Image
-                      src={MonkeLogo}
-                      alt="Image"
-                      className="inline-block align-middle mr-2"
-                    />
-                    200 Points
-                  </div>
-                </div>
+                {!isTaskCompleted && (
+                    <div className="flex">
+                      <div className="flex-1 p-4">
+                        <p className="font-medium text-[#184623]">
+                          <Image
+                            src={Tweet}
+                            alt="logo"
+                            className="inline-block align-middle mr-1"
+                          />{" "}
+                          Twitter PFP
+                        </p>
+                        <p className="font-normal text-[#AAAAAA]">
+                          User is awarded for using NFT as Twitter
+                        </p>
+                      </div>
+                      <div className="p-4 font-bold text-[#184623] flex items-center">
+                        <Image
+                          src={MonkeLogo}
+                          alt="Image"
+                          className="inline-block align-middle mr-2"
+                        />
+                        200 Points
+                      </div>
+                    </div>
+                  )}
                 <div className="flex">
                   <div className="flex-1 p-4">
                     <p className="font-medium text-[#184623]">
