@@ -20,13 +20,12 @@ import footerImage5 from "../assets/image 49.png";
 import footerImage6 from "../assets/image 50.png";
 import footerImage7 from "../assets/image 51.png";
 import FooterBackgroundImage from "../assets/footerbg.png";
-import leftBottom from "../assets/overlay/left-bottom.png";
-import middle from "../assets/overlay/middle.png";
-import rightBottom from "../assets/overlay/right-bottom.png";
 import Mobiledevice from "../assets/Mobiledevice.png";
 import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
 import Image from "next/image";
+import Dashboard from "../assets/Dashboard.png";
+import Navbar from "../layout/Navbar";
 
 const Home = () => {
   const footerImages = [
@@ -100,10 +99,12 @@ const Home = () => {
     setIsTaskCompleted(false);
   };
   return (
-    <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
-      {/* <Navbar /> */}
-      {/* <Ex /> */}
-      {/* Mobile Layout */}
+    <>
+      <Navbar />
+      <div className="bg-[#FDFBEE]    relative overflow-hidden overflow-y-scroll  ">
+        {/* <Image src={Dashboard} layout="fill" objectFit="cover" /> */}
+
+        {/* Mobile Layout */}
 
         <div className="sm:hidden">
           <div className="flex mt-14 mb-8 px-4 md:px-0">
@@ -167,21 +168,10 @@ const Home = () => {
                 />
               </div>
 
-            {/* Text */}
-            <div>
-              <div className=" p-4 bg-white relative h-full">
-                <Image
-                  style={{
-                    position: "absolute",
-                    
-                    left: "539px",
-                    bottom: "-38px",
-                  }}
-                  className=""
-                  src={middle}
-                />
-
-                <div className="">
+              {/* Text */}
+              <div>
+                <div className=" p-4 bg-white relative h-full">
+                  {/* <div className="">
                   <Image src={BgMonk} alt="" className="absolute bottom-0 " />
                 </div> */}
 
