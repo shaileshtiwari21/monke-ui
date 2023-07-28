@@ -243,12 +243,13 @@ const Home = () => {
             <div>
               <div className=" p-4 bg-white relative h-full">
                 <Image
+                  className="lg:block hidden"
                   style={{
                     position: "absolute",
-                    right:-30,
+                    right: -30,
                     bottom: -26,
                   }}
-                  className=""
+               
                   src={middle}
                 />
 
