@@ -27,6 +27,7 @@ import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
 import Image from "next/image";
 import Navbar from "../layout/Navbar";
+import Navleft from "../assets/overlay/navleft.png"
 
 const Home = () => {
   const [selectedIndex, setselectedIndex] = useState(0);
@@ -176,6 +177,7 @@ const Home = () => {
       <Image className="absolute bottom-0" src={leftBottom} />
       <Image className="absolute bottom-0 right-0" src={rightBottom} />
       <Image style={{position:"absolute",top:74}} className="hidden lg:block  h-20 w-20" src={NavBarTop} />
+      <Image style={{position:"absolute",top:74 ,right:0}} className="hidden lg:block  h-20 w-20" src={Navleft} />
       <Navbar />
       {/* <Ex /> */}
       {/* Mobile Layout */}
@@ -222,9 +224,9 @@ const Home = () => {
             onClick={() => handleImageClick(Mobiledevice)}
           /> */}
         </div>
-        <div className="flex justify-center pt-8">
+        {/* <div className="flex justify-center pt-8">
           <Image src={Line} alt="" />
-        </div>
+        </div> */}
       </div>
       {/* end  */}
 
