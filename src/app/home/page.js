@@ -20,6 +20,9 @@ import footerImage5 from "../assets/image 49.png";
 import footerImage6 from "../assets/image 50.png";
 import footerImage7 from "../assets/image 51.png";
 import FooterBackgroundImage from "../assets/footerbg.png";
+import leftBottom from "../assets/overlay/left-bottom.png";
+import middle from "../assets/overlay/middle.png";
+import rightBottom from "../assets/overlay/right-bottom.png";
 import Mobiledevice from "../assets/Mobiledevice.png";
 import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
@@ -163,6 +166,8 @@ const Home = () => {
   }
   return (
     <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
+      <Image className="absolute bottom-0" src={leftBottom} />
+      <Image className="absolute bottom-0 right-0" src={rightBottom} />
       {/* <Navbar /> */}
       {/* <Ex /> */}
       {/* Mobile Layout */}
@@ -237,6 +242,17 @@ const Home = () => {
             {/* Text */}
             <div>
               <div className=" p-4 bg-white relative h-full">
+                <Image
+                  style={{
+                    position: "absolute",
+                    
+                    left: "539px",
+                    bottom: "-38px",
+                  }}
+                  className=""
+                  src={middle}
+                />
+
                 <div className="">
                   <Image src={BgMonk} alt="" className="absolute bottom-0 " />
                 </div>
