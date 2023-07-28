@@ -1,7 +1,5 @@
-"use client"
-import  { useState } from "react";
-
-
+"use client";
+import { useState } from "react";
 
 // import Navbar from "../layouts/Navbar";
 
@@ -27,8 +25,8 @@ import Mobiledevice1 from "../assets/Mobiledevice1.png";
 import Line from "../assets/line.png";
 import Image from "next/image";
 
-
 const Home = () => {
+  const [selectedIndex, setselectedIndex] = useState(0);
   const footerImages = [
     footerImage,
     footerImage1,
@@ -40,13 +38,99 @@ const Home = () => {
     footerImage7,
   ];
   const divData = [
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke, background :"#F3E9AF" },
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke ,background :"#F6C298"},
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke,background :"#C9B2DE" },
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke ,background :"#E3E7FD"},
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke ,background :"#FFF7CE"},
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke,background :"#E2D8FE" },
-    { text1: "Gen 2", text2: "SMB #1741", ImageSrc: Monke ,background :"#FFF7CE"},
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#F3E9AF",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#F6C298",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#C9B2DE",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#E3E7FD",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#FFF7CE",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#E2D8FE",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: Monke,
+      background: "#FFF7CE",
+    },
+  ];
+
+  const divDatamobile = [
+    {
+      text1: "Gen 1",
+      text2: "SMB #1741",
+      ImageSrc: footerImage,
+      background: "#F3E9AF",
+    },
+    {
+      text1: "Gen 2",
+      text2: "SMB #1741",
+      ImageSrc: footerImage1,
+      background: "#F6C298",
+    },
+    {
+      text1: "Gen 3",
+      text2: "SMB #1741",
+      ImageSrc: footerImage2,
+      background: "#C7B1DE",
+    },
+    {
+      text1: "Gen 4",
+      text2: "SMB #1741",
+      ImageSrc: footerImage3,
+      background: "#E3E7FD",
+    },
+    {
+      text1: "Gen 5",
+      text2: "SMB #1741",
+      ImageSrc: footerImage4,
+      background: "#FFF7CE",
+    },
+    {
+      text1: "Gen 6",
+      text2: "SMB #1741",
+      ImageSrc: footerImage5,
+      background: "#E2D8FE",
+    },
+    {
+      text1: "Gen 7",
+      text2: "SMB #1741",
+      ImageSrc: footerImage6,
+      background: "#FFF7CE",
+    },
+    {
+      text1: "Gen 8",
+      text2: "SMB #1741",
+      ImageSrc: footerImage7,
+      background: "#D7EAFF",
+    },
   ];
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -57,15 +141,17 @@ const Home = () => {
 
     console.log(index);
   };
-
+  function move(index) {
+    let d = footerImage[index];
+    console.log(d);
+  }
   return (
     <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
       {/* <Navbar /> */}
       {/* <Ex /> */}
       {/* Mobile Layout */}
-     
-      <div className="sm:hidden">
 
+      <div className="sm:hidden">
         <div className="flex mt-14 mb-8 px-4 md:px-0">
           <div className="flex-1 font-black text-[#184623]">
             <Image
@@ -78,25 +164,34 @@ const Home = () => {
           <div className="font-black text-[#184623]">Points: 5,000</div>
         </div>
 
-        <div className="flex w-[128px] ">
-          <Image
-            className="mr-2"
-            src={footerImage3}
-            alt="alt"
-            onClick={() => handleImageClick(footerImage3)}
-          />
-          <Image
+        <div className="flex overflow-x-scroll w-screen ">
+          {divDatamobile.map((item, index) => (
+            <>
+              <Image
+                className="ml-2 h-28 w-28"
+                src={item.ImageSrc}
+                alt="alt"
+                onClick={() => {
+                  handleImageClick(item.ImageSrc), setselectedIndex(index);
+                }}
+              />
+              {selectedIndex == index && (
+                <div
+                  style={{ backgroundColor: item.background }}
+                  className={`flex-shrink-0 w-32  justify-center flex flex-col  bg-cover bg-no-repeat bg-center pl-4 `}>
+                  <p className="text-[#8D95C8]  font-medium">{item.text1}</p>
+                  <p className="text-[#8D95C8] text-base font-black">
+                    SMB #1741
+                  </p>
+                </div>
+              )}
+            </>
+          ))}
+          {/* <Image
             src={Mobiledevice}
             alt="alt"
             onClick={() => handleImageClick(Mobiledevice)}
-          />
-          <div
-            className=" bg-cover bg-no-repeat bg-center p-4"
-            style={{ backgroundImage: `url(${Mobiledevice1})`, width: "128px" }}
-          >
-            <p className="text-[#FF93A4] font-medium">Gen 3</p>
-            <p className="text-[#FF93A4] font-black">SMB #1741</p>
-          </div>
+          /> */}
         </div>
         <div className="flex justify-center pt-8">
           <Image src={Line} alt="" />
@@ -117,7 +212,9 @@ const Home = () => {
               <Image
                 src={selectedImage ? selectedImage : footerImage3}
                 alt="Sample Image"
-                className={" h-[340px] w-[340px] md:w-full md:h-[450px] rounded-lg flex"}
+                className={
+                  " h-[340px] w-[340px] md:w-full md:h-[450px] rounded-lg flex"
+                }
               />
             </div>
 
@@ -250,13 +347,12 @@ const Home = () => {
                     <div
                       key={index}
                       className={`footer  ${
-                        selectedImageIndex !== index && "opacity-0 " 
+                        selectedImageIndex !== index && "opacity-0 "
                       } px-2 py-2 flex `}
                       style={{
                         // backgroundImage: `url(${FooterBackgroundImage})`,
-                        background: item.background
-                      }}
-                    >
+                        background: item.background,
+                      }}>
                       <div>
                         <p className="font-medium text-[#8D95C8]">
                           {item.text1}
