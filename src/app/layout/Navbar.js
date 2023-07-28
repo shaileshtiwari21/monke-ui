@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../assets/Vector.png";
 import Monke from "../assets/Monke.png";
-import Monke1 from "../assets/Monke1.png";
+import Monke1 from "../assets/monke1.png";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoIosArrowUp } from "react-icons/io";
 import NavIcon from "../assets/Navicon.png";
