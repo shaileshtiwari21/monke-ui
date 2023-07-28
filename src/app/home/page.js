@@ -87,48 +87,64 @@ const Home = () => {
       text1: "Gen 1",
       text2: "SMB #1741",
       ImageSrc: footerImage,
+      ImageMonke: Monke,
+
       background: "#F3E9AF",
     },
     {
       text1: "Gen 2",
-      text2: "SMB #1741",
+      text2: "SMB #1742",
       ImageSrc: footerImage1,
+      ImageMonke: Monke,
+
       background: "#F6C298",
     },
     {
       text1: "Gen 3",
-      text2: "SMB #1741",
+      text2: "SMB #1743",
       ImageSrc: footerImage2,
+      ImageMonke: Monke,
+
       background: "#C7B1DE",
     },
     {
       text1: "Gen 4",
-      text2: "SMB #1741",
+      text2: "SMB #1744",
       ImageSrc: footerImage3,
+      ImageMonke: Monke,
+
       background: "#E3E7FD",
     },
     {
       text1: "Gen 5",
-      text2: "SMB #1741",
+      text2: "SMB #1745",
       ImageSrc: footerImage4,
+      ImageMonke: Monke,
+
       background: "#FFF7CE",
     },
     {
       text1: "Gen 6",
-      text2: "SMB #1741",
+      text2: "SMB #1746",
       ImageSrc: footerImage5,
+      ImageMonke: Monke,
+
       background: "#E2D8FE",
     },
     {
       text1: "Gen 7",
-      text2: "SMB #1741",
+      text2: "SMB #1747",
       ImageSrc: footerImage6,
+      ImageMonke: Monke,
+
       background: "#FFF7CE",
     },
     {
       text1: "Gen 8",
-      text2: "SMB #1741",
+      text2: "SMB #1748",
       ImageSrc: footerImage7,
+      ImageMonke: Monke,
+
       background: "#D7EAFF",
     },
   ];
@@ -340,10 +356,18 @@ const Home = () => {
               <div className="font-black text-[#184623]">Points: 5,000</div>
             </div>
 
-            <div className="flex">
+            {/* <div className="flex">
               {divData.map((item, index) => (
                 <>
-                  <>
+              
+                </>
+              ))}
+            </div> */}
+
+            <div className="flex justify-center mx-8">
+              {divDatamobile.map((item, index) => (
+                <>
+                  <div className="flex flex-col">
                     <div
                       key={index}
                       className={`footer  ${
@@ -357,30 +381,29 @@ const Home = () => {
                         <p className="font-medium text-[#8D95C8]">
                           {item.text1}
                         </p>
-                        <p className="font-black text-[#8D95C8]">
+                        <p className="font-black text-sm text-[#8D95C8]">
                           {item.text2}
                         </p>
                       </div>
                       <div>
-                        <Image src={Monke} alt="" className="h-6 w-6" />
+                        <Image
+                          src={item.ImageMonke}
+                          alt=""
+                          className="h-6 w-6"
+                        />
                       </div>
                     </div>
-                  </>
-                </>
-              ))}
-            </div>
-
-            <div className="flex justify-center mx-8">
-              {footerImages.map((item, index) => (
-                <>
-                  <Image
-                    src={item}
-                    alt="alt"
-                    key={index}
-                    onClick={() => handleImageClick(item, index)}
-                    style={{ backgroundImage: `url(${FooterBackgroundImage})` }}
-                    className={`  md:w-[130px] `}
-                  />
+                    <Image
+                      src={item.ImageSrc}
+                      alt="alt"
+                      key={index}
+                      onClick={() => handleImageClick(item.ImageSrc, index)}
+                      style={{
+                        backgroundImage: `url(${FooterBackgroundImage})`,
+                      }}
+                      className={`  md:w-[130px] `}
+                    />
+                  </div>
                 </>
               ))}
             </div>
