@@ -16,7 +16,11 @@
   }
 }
 
-body {
+.abhaya {
+  background-image: url("../app/assets/Dashboard.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -25,3 +29,13 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+.bgimg{
+  /* background: url(../images/backgroundImage.jpg) no-repeat center center fixed; */
+  background-image: url("../app/assets/navbg.png");
+  /* background-size: cover; */
+  background-attachment: fixed;
+  
+}
+
+
+
