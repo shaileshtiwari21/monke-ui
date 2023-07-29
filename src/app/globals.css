@@ -25,10 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
-.bgimg{
+.bgimg {
   /* background: url(../images/backgroundImage.jpg) no-repeat center center fixed; */
   background-image: url("../app/assets/navbg.png");
   /* background-size: cover; */
   background-attachment: fixed;
-  
 }

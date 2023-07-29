@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 
 import Monke from "../assets/Monke.png";
@@ -24,7 +24,7 @@ import NavBarTop from "../assets/overlay/top-left.png";
 
 import Image from "next/image";
 import Navbar from "../layout/Navbar";
-import Navleft from "../assets/overlay/navleft.png"
+import Navleft from "../assets/overlay/navleft.png";
 
 const Home = () => {
   const [selectedIndex, setselectedIndex] = useState(0);
@@ -173,8 +173,16 @@ const Home = () => {
     <div className="bg-[#FDFBEE]  relative overflow-hidden overflow-y-scroll">
       <Image className="absolute bottom-0" src={leftBottom} />
       <Image className="absolute bottom-0 right-0" src={rightBottom} />
-      <Image style={{position:"absolute",top:74}} className="hidden lg:block  h-20 w-20" src={NavBarTop} />
-      <Image style={{position:"absolute",top:74 ,right:0}} className="hidden lg:block  h-20 w-20" src={Navleft} />
+      <Image
+        style={{ position: "absolute", top: 74 }}
+        className="hidden lg:block  h-20 w-20"
+        src={NavBarTop}
+      />
+      <Image
+        style={{ position: "absolute", top: 74, right: 0 }}
+        className="hidden lg:block  h-20 w-20"
+        src={Navleft}
+      />
       <Navbar />
       {/* <Ex /> */}
       {/* Mobile Layout */}
@@ -206,7 +214,8 @@ const Home = () => {
               {selectedIndex == index && (
                 <div
                   style={{ backgroundColor: item.background }}
-                  className={`flex-shrink-0 w-32  justify-center flex flex-col  bg-cover bg-no-repeat bg-center pl-4 `}>
+                  className={`flex-shrink-0 w-32  justify-center flex flex-col  bg-cover bg-no-repeat bg-center pl-4 `}
+                >
                   <p className="text-[#8D95C8]  font-medium">{item.text1}</p>
                   <p className="text-[#8D95C8] text-base font-black">
                     SMB #1741
@@ -256,7 +265,6 @@ const Home = () => {
                     right: -30,
                     bottom: -26,
                   }}
-               
                   src={middle}
                 />
 
@@ -283,55 +291,55 @@ const Home = () => {
                 </div>
                 <hr style={{ borderColor: "#F5F5F5" }} />
                 <div className="flex gap-4 p-3">
-                <p
-                      // className="font-semibold text-[#184623] cursor-pointer"
-                      className={`${
-                        isTaskCompleted
-                          ? "font-normal text-[#AAAAAA] cursor-pointer"
-                          : "font-semibold text-[#184623]"
-                      }`}
-                      onClick={handleALLTask}
-                    >
-                      All Task (5)
-                    </p>
                   <p
-                      className={`${
-                        isTaskCompleted
-                          ? "font-semibold text-[#184623]"
-                          : "font-normal text-[#AAAAAA] cursor-pointer"
-                      }`}
-                      onClick={handleCompleteTask}
-                    >
-                      Completed
-                    </p>
+                    // className="font-semibold text-[#184623] cursor-pointer"
+                    className={`${
+                      isTaskCompleted
+                        ? "font-normal text-[#AAAAAA] cursor-pointer"
+                        : "font-semibold text-[#184623]"
+                    }`}
+                    onClick={handleALLTask}
+                  >
+                    All Task (5)
+                  </p>
+                  <p
+                    className={`${
+                      isTaskCompleted
+                        ? "font-semibold text-[#184623]"
+                        : "font-normal text-[#AAAAAA] cursor-pointer"
+                    }`}
+                    onClick={handleCompleteTask}
+                  >
+                    Completed
+                  </p>
                 </div>
                 <hr style={{ borderColor: "#F5F5F5" }} />
                 {/* inner content  */}
                 {!isTaskCompleted && (
-                    <div className="flex">
-                      <div className="flex-1 p-4">
-                        <p className="font-medium text-[#184623]">
-                          <Image
-                            src={Tweet}
-                            alt="logo"
-                            className="inline-block align-middle mr-1"
-                          />{" "}
-                          Twitter PFP
-                        </p>
-                        <p className="font-normal text-[#AAAAAA]">
-                          User is awarded for using NFT as Twitter
-                        </p>
-                      </div>
-                      <div className="p-4 font-bold text-[#184623] flex items-center">
+                  <div className="flex">
+                    <div className="flex-1 p-4">
+                      <p className="font-medium text-[#184623]">
                         <Image
-                          src={MonkeLogo}
-                          alt="Image"
-                          className="inline-block align-middle mr-2"
-                        />
-                        200 Points
-                      </div>
+                          src={Tweet}
+                          alt="logo"
+                          className="inline-block align-middle mr-1"
+                        />{" "}
+                        Twitter PFP
+                      </p>
+                      <p className="font-normal text-[#AAAAAA]">
+                        User is awarded for using NFT as Twitter
+                      </p>
                     </div>
-                  )}
+                    <div className="p-4 font-bold text-[#184623] flex items-center">
+                      <Image
+                        src={MonkeLogo}
+                        alt="Image"
+                        className="inline-block align-middle mr-2"
+                      />
+                      200 Points
+                    </div>
+                  </div>
+                )}
                 <div className="flex">
                   <div className="flex-1 p-4">
                     <p className="font-medium text-[#184623]">
@@ -416,7 +424,8 @@ const Home = () => {
                       style={{
                         // backgroundImage: `url(${FooterBackgroundImage})`,
                         background: item.background,
-                      }}>
+                      }}
+                    >
                       <div>
                         <p className="font-medium text-[#8D95C8]">
                           {item.text1}
